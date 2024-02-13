@@ -1,0 +1,161 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --mexican-red-50: #fdf3f3;
+  --mexican-red-100: #fbe5e5;
+  --mexican-red-200: #f9cfcf;
+  --mexican-red-300: #f4adad;
+  --mexican-red-400: #eb7e7e;
+  --mexican-red-500: #df5454;
+  --mexican-red-600: #cb3737;
+  --mexican-red-700: #9f2828;
+  --mexican-red-800: #8d2727;
+  --mexican-red-900: #762626;
+  --mexican-red-950: #3f1010;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--mexican-red-300);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: var(--mexican-red-950);
+  text-align: center;
+}
+
+button {
+  border: 2px solid var(--mexican-red-800);
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--mexican-red-950);
+  font-size: 25px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+button:hover {
+  background-color: var(--mexican-red-500);
+  transition: .3s;
+}
+
+.app {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.title_disabled { 
+  transition: .5s;
+  opacity: 0;
+}
+
+.what-button {
+  width: 300px;
+  height: 50px;
+  opacity: 0;
+  transition: .5s;
+}
+
+.what-button_active {
+  transition: .5s;
+  opacity: 1;
+}
+
+.sticker {
+  position: absolute;
+  top: 35%;
+  left: 35%;
+  /* transform: translateY(3000px); */
+  display: none;
+}
+
+.sticker_active {
+  display: block;
+  animation: stickerio 2s ;
+}
+
+@keyframes stickerio {
+  0% {
+    transform: translateY(3000px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  button {
+    font-size: 20px;
+  }
+
+  .app {
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  .sticker {
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sticker {
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  button {
+    font-size: 20px;
+  }
+
+  .what-button {
+    width: 100%;
+  }
+  .sticker {
+    left: 60px;
+    max-width: calc(100% - 35%);
+  }
+}
